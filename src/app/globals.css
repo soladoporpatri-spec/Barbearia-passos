@@ -1,29 +1,56 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #FAF9F6;
-  --color-brand-ink: #1A1A1A;
-  --color-brand-muted: #808080;
-  --color-brand-accent: #2C2C2C;
-  --color-brand-border: #E5E5E5;
-  
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-serif), ui-serif, Georgia, serif;
+  --color-brand-bg: #0C0C0E;
+  --color-brand-surface: #141417;
+  --color-brand-surface-raised: #1C1C21;
+  --color-brand-surface-subtle: #24242A;
+  --color-brand-ink: #F5F5F7;
+  --color-brand-muted: #8E8E93;
+  --color-brand-dim: #545458;
+  --color-brand-gold: #C5A059;
+  --color-brand-gold-hover: #D8B570;
+  --color-brand-gold-subtle: rgba(197, 160, 89, 0.12);
+  --color-brand-border: rgba(255, 255, 255, 0.08);
+  --color-brand-border-strong: rgba(255, 255, 255, 0.16);
+  --color-brand-whatsapp: #25D366;
+  --color-brand-whatsapp-hover: #22BF5B;
+
+  --font-sans: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-/* Custom utilities */
+/* Utilitários globais de usabilidade e ergonomia mobile */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 5rem);
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }
 
 html {
   background-color: var(--color-brand-bg);
   color: var(--color-brand-ink);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 ::selection {
-  background: var(--color-brand-ink);
-  color: var(--color-brand-bg);
+  background-color: var(--color-brand-gold);
+  color: #000000;
 }
